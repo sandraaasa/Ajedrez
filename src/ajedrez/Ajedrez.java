@@ -43,6 +43,8 @@ public class Ajedrez {
                 if (mov!=null){ //significa que hay movimiento en cuanto al tablero
                     if (nuevo.tablero[mov.posInicial.fila][mov.posInicial.columna].validoMovimiento(mov)==true){//mov es valido pieza
                         //mover
+                        /*mov.hayPiezaEntre*/
+                        
                         //poner la pieza pos inicial en la final
                         //quitar la pieza de la pos inicial
                         //cambiar de turno

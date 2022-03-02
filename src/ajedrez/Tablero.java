@@ -11,7 +11,7 @@ package ajedrez;
  */
 public class Tablero {
     
-    Pieza tablero[][] = new Pieza [8][8];
+    protected Pieza tablero[][] = new Pieza [8][8];
     public Tablero(){
         tablero[0][0]=new Torre('b');
         tablero[0][1]=new Caballo('b');
@@ -54,7 +54,7 @@ public class Tablero {
             System.out.println("");
         }
     }
-    
+
 //Metodos
     public boolean hayPieza(int fila,int columna){
         boolean on=false;
@@ -67,8 +67,14 @@ public class Tablero {
         return hayPieza(pos.fila,pos.columna);
     }
     /*public boolean hayPiezaEntre (Movimiento mov){}*/ //es muy largo
-    /*public void ponPieza(Pieza figura, int fila, int columna){}*/
-    /*public void ponPieza(Pieza figura, Posicion Pos){}*/
+    public void ponPieza(Pieza figura, int fila, int columna){
+        if (hayPieza(fila,columna)==true){
+            tablero[fila][columna]= figura;
+        }
+    }
+    public void ponPieza(Pieza figura, Posicion pos){
+        ponPieza(figura,pos.fila,pos.columna);
+    }
     /*public void quitaPieza(int fila,int columna){}*/
     /*public void quitaPieza(Posicion pos){}*/
     /*public Pieza DevuelvePieza(int fila,int columna){
