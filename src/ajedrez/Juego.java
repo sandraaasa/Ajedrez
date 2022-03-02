@@ -26,7 +26,7 @@ public class Juego {
         int cInicial = jugada.charAt(0)-65;
         int cFinal = jugada.charAt(2)-65;
         
-        if (validarJugada(fInicial,fFinal,cInicial, cFinal, tablero)==true){
+        if (validarJugada(fInicial,fFinal,cInicial, cFinal, tablero)==false){
             Posicion posInicial = new Posicion(fInicial,cInicial);
             Posicion posFinal = new Posicion(fFinal,cFinal);
             mov = new Movimiento(posInicial,posFinal);

@@ -30,6 +30,7 @@ public class Ajedrez {
         
         //contra la maquina
         Juego juego = new Juego ('b');
+        System.out.println("Empiezan las blancas");
         Tablero nuevo= new Tablero();
         nuevo.pintarTablero();
       
