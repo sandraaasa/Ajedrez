@@ -32,6 +32,7 @@ public class Ajedrez {
         Juego juego = new Juego ('b');
         Tablero nuevo= new Tablero();
         nuevo.pintarTablero();
+      
         boolean on=false;
         Movimiento mov =null;
         do{
@@ -55,6 +56,7 @@ public class Ajedrez {
                 on=true;
             }
         }while(on==false);
+        
     }
     
 }
