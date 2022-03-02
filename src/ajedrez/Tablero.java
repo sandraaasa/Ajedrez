@@ -67,20 +67,19 @@ public class Tablero {
         return hayPieza(pos.fila,pos.columna);
     }
     /*public boolean hayPiezaEntre (Movimiento mov){}*/ //es muy largo
+    
     public void ponPieza(Pieza figura, int fila, int columna){
         if (hayPieza(fila,columna)==true){
             tablero[fila][columna]= figura;
         }
     }
-    public void ponPieza(Pieza figura, Posicion pos){
-        ponPieza(figura,pos.fila,pos.columna);
+    public void ponPieza(Pieza figura, Posicion pos){ponPieza(figura,pos.fila,pos.columna);}
+    
+    public void quitaPieza(int fila,int columna){tablero[fila][columna]=null;}
+    public void quitaPieza(Posicion pos){tablero[pos.fila][pos.columna]=null;}
+    public String DevuelvePieza(int fila,int columna){
+        return tablero[fila][columna].pintarPieza();
     }
-    /*public void quitaPieza(int fila,int columna){}*/
-    /*public void quitaPieza(Posicion pos){}*/
-    /*public Pieza DevuelvePieza(int fila,int columna){
-        return Tabla[fila][columna];
-    }
-    */
     /*public Pieza DevuelvePieza(Posicion pos){}*/
     @Override
     public String toString() {
