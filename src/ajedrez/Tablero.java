@@ -77,10 +77,11 @@ public class Tablero {
     
     public void quitaPieza(int fila,int columna){tablero[fila][columna]=null;}
     public void quitaPieza(Posicion pos){tablero[pos.fila][pos.columna]=null;}
-    public String DevuelvePieza(int fila,int columna){
-        return tablero[fila][columna].pintarPieza();
-    }
-    /*public Pieza DevuelvePieza(Posicion pos){}*/
+    
+    public String DevuelvePieza(int fila,int columna){return tablero[fila][columna].pintarPieza();}
+    public Pieza DevuelvePieza(Posicion pos){return tablero[pos.fila][pos.columna];}
+    
+    
     @Override
     public String toString() {
     return "tablero";

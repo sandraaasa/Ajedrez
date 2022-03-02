@@ -44,7 +44,7 @@ public class Ajedrez {
                     if (nuevo.tablero[mov.posInicial.fila][mov.posInicial.columna].validoMovimiento(mov)==true){//mov es valido pieza
                         //mover
                         nuevo.ponPieza(nuevo.tablero[mov.posInicial.fila][mov.posInicial.columna], mov.posFinal);//poner la pieza pos inicial en la final
-                        //quitar la pieza de la pos inicial
+                        nuevo.quitaPieza(mov.posInicial);//quitar la pieza de la pos inicial
                         //cambiar de turno
                         nuevo.pintarTablero();//pintar el Tablero
                     }else
