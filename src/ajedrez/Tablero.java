@@ -48,7 +48,7 @@ public class Tablero {
             if (tablero[i][j]!=null)
                System.out.print(tablero[i][j]+"  "); //si quiero letras llamo a pintar de pieza
             else
-               System.out.print("__"+" ");
+               System.out.print("__"+"  ");
             }
             
             System.out.println("");
