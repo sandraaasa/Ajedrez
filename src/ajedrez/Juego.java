@@ -36,10 +36,19 @@ public class Juego {
     };
      public boolean validarJugada (int fInicial,int fFinal,int cInicial,int cFinal, Tablero tablero){
          //Ej: A2A3
-         boolean on= false;
-         //int filaInicial = 
+        
+        boolean on= false;
+        if (tablero.tablero[fFinal][cFinal]==null) {
+            on=true;
+        }else{
+            if (tablero.tablero[fFinal][cFinal].color==tablero.tablero[fInicial][cInicial].color){
+                on=false;
+            }else{
+                on=true;
+            }
+        }
          
-         return on;
+        return on;
      }
  
 }
