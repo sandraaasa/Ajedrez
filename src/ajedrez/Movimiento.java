@@ -10,14 +10,14 @@ package ajedrez;
  * @author sancalsa
  */
 public class Movimiento {
-/**
- * ATRIBUTOS
- */
+
+//ATRIBUTOS
+ 
    protected Posicion posInicial;
    protected Posicion posFinal;
- /**
-  * CONSTRUCTORES
-  */
+ 
+//CONSTRUCTORES
+  
     /**
      * Constructor que permite la creacion de un objeto de tipo Movimiento con posicion 0,0
      */
@@ -43,12 +43,12 @@ public class Movimiento {
                 this.posFinal = posFinal;
         }
     }
-/**
- * METODOS
- */
+
+//METODOS
+
     /**
-     * 
-     * @return 
+     * Metodo que permite conocer si el movimiento es vertical 
+     * @return boolean del movimiento vertical
      */
     public boolean esVertical (){
         boolean on = false;
@@ -57,6 +57,10 @@ public class Movimiento {
         }
         return on;
     }
+    /**
+     * Metodo que permite conocer si el movimiento es vertical
+     * @return boolean del movimiento horizontal
+     */
     public boolean esHorizontal(){
         boolean on = false;
         if (posInicial.getFila()==posFinal.getFila()){
@@ -64,7 +68,10 @@ public class Movimiento {
         }
         return on;
     }
-    // REVISAR
+    /**
+     * Metodo que permite conocer si el movimiento es horizontal
+     * @return boolean del movimiento vertical
+     */
     public boolean esDiagonal (){
         boolean on = false;
         if (posInicial.getFila()!=posFinal.getFila()&&posInicial.getColumna()!=posFinal.getColumna()){
@@ -72,9 +79,17 @@ public class Movimiento {
         }
         return on;
     }
+    /**
+     * Metodo que devuelve la cantidad de posiciones avanzadas
+     * @return numero entero dde la cantidad de posiciones saltadas
+     */
     public int saltoVertical(){
         return posInicial.getFila()-posFinal.getFila();
     }
+    /**
+     * Metodo que devuelve la cantidad de posiciones avanzadas
+     * @return numero entero dde la cantidad de posiciones saltadas 
+     */
     public int saltoHorizontal(){
         return posInicial.getColumna()-posFinal.getColumna();
     }
