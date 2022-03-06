@@ -7,6 +7,7 @@ package ajedrez;
 
 /**
  *
+ * Clase Tablero
  * @author sancalsa
  * @version 6.3.2022
  */
