@@ -28,15 +28,15 @@ public class Ajedrez {
         }while(color==1||color==0);*/
         
         
-        //contra la maquina
+        //un jugador de momento 
         Juego juego = new Juego ('b');
         System.out.println("Empiezan las blancas");
         Tablero nuevo= new Tablero();
-        nuevo.pintarTablero();
       
         boolean on=false;
         Movimiento mov =null;
         do{
+            nuevo.pintarTablero();
             System.out.println("Que pieza quieres mover?\n"
                     + "*Ejemplo A1A3 = ficha A1 se mueve a casilla A3 (para terminar FIN)");
             String jugada= sc.nextLine();
@@ -48,10 +48,15 @@ public class Ajedrez {
                         nuevo.ponPieza(nuevo.tablero[mov.posInicial.fila][mov.posInicial.columna], mov.posFinal);//poner la pieza pos inicial en la final
                         nuevo.quitaPieza(mov.posInicial);//quitar la pieza de la pos inicial
                         //cambiar de turno
-                        nuevo.pintarTablero();//pintar el Tablero
-                    }else
+                        on=false;
+                    }else{
                         System.out.println("Esa pieza no se mueve así");
-                } 
+                        on=false;
+                    }
+                }else{
+                    System.out.println("Ese movimiento no existe");
+                    on=false;
+                }
 
             }else{
                 on=true;

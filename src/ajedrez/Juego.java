@@ -26,7 +26,7 @@ public class Juego {
      * 
      * @return 
      */
-    public int getTurno(){return turno;}
+    public char getTurno(){return turno;}
     /**
      * 
      * @param turno 
@@ -67,8 +67,6 @@ public class Juego {
      * @return boolean de la jugada introducida por numero enteros
      */
      public boolean validarJugada (int fInicial,int fFinal,int cInicial,int cFinal, Tablero tablero){
-         //Ej: A2A3
-        
         boolean on= false;
         if (tablero.tablero[fFinal][cFinal]==null) {
             on=true;

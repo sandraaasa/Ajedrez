@@ -33,13 +33,13 @@ public class Movimiento {
      * @param posInical
      * @param posFinal 
      */
-    public Movimiento(Posicion posInical, Posicion posFinal) {
-        if ((posInicial.columna>=0 || posInicial.columna<=7)&&
-            (posInicial.fila>=0 || posInicial.fila<=7) &&
-            (posFinal.columna>=0|| posFinal.columna<=7) &&
-            (posFinal.fila>=0||posFinal.fila<=7)){
+    public Movimiento(Posicion posInicial, Posicion posFinal) {
+        if ((posInicial.columna>=0 && posInicial.columna<=7)&&
+            (posInicial.fila>=0 && posInicial.fila<=7) &&
+            (posFinal.columna>=0 && posFinal.columna<=7) &&
+            (posFinal.fila>=0&&posFinal.fila<=7)){
             
-                this.posInicial = posInical;
+                this.posInicial = posInicial;
                 this.posFinal = posFinal;
         }
     }

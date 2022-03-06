@@ -45,14 +45,7 @@ public abstract class Pieza {
      * @return boolean del movimiento
      */
     public abstract boolean validoMovimiento(Movimiento mov);
-    /**
-     * Metodo que devuelve un string que contiene la primera letra de la pieza 
-     * y el char de su atributo color
-     * @return String de la pieza
-     */
-    public String pintarPieza() {
-        return this.getClass().getSimpleName().charAt(0) + Character.toString(color);
-    }
+    
     /**
      * Metodo que obliga a todas las subclases a tener un metodo
      * que sobreescribe el metodo toString de la superclase Obeject
@@ -60,5 +53,15 @@ public abstract class Pieza {
      */
     @Override
     public abstract String toString() ;
+    
+    /**
+     * Metodo que devuelve un string que contiene la primera letra de la pieza 
+     * y el char de su atributo color
+     * @return String de la pieza
+     */
+    public String pintarPieza() {
+        return toString();
+        /*return this.getClass().getSimpleName().charAt(0) + Character.toString(color);*/
+    }
     
 }

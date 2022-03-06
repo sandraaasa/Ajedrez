@@ -45,12 +45,11 @@ public class Tablero {
     public void pintarTablero(){
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[i].length; j++) {
-            if (tablero[i][j]!=null)
-               System.out.print(tablero[i][j]+"  "); //si quiero letras llamo a pintar de pieza
-            else
-               System.out.print("__"+"  ");
+                if (tablero[i][j]!=null)
+                   System.out.print(tablero[i][j]+"  ");
+                else
+                   System.out.print("__"+"  ");
             }
-            
             System.out.println("");
         }
     }
@@ -69,9 +68,9 @@ public class Tablero {
     /*public boolean hayPiezaEntre (Movimiento mov){}*/ //es muy largo
     
     public void ponPieza(Pieza figura, int fila, int columna){
-        if (hayPieza(fila,columna)==true){
-            tablero[fila][columna]= figura;
-        }
+        if (tablero[fila][columna]==null||tablero[fila][columna].getColor()!=figura.getColor()){
+            tablero[fila][columna]= figura;//comer pieza 
+        }else System.out.println("NO AL CANIVALISMO. No puedes comerte tus propias piezas");
     }
     public void ponPieza(Pieza figura, Posicion pos){ponPieza(figura,pos.fila,pos.columna);}
     
