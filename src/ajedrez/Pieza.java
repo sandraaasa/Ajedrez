@@ -7,7 +7,9 @@ package ajedrez;
 
 /**
  *
+ * Superclase Pieza 
  * @author sancalsa
+ * @version 6.3.2022
  */
 public abstract class Pieza {
 //ATRIBUTOS 
@@ -42,14 +44,15 @@ public abstract class Pieza {
      * Metodo abstracto que obliga a todas las subclases de Pieza 
      * a crear un metodo que devuelva un boolean a partir de un movimiento
      * para saber si este es valido o no
-     * @param mov
+     * @param mov movimiento
      * @return boolean del movimiento
      */
     public abstract boolean validoMovimiento(Movimiento mov);
     
     /**
      * Metodo que obliga a todas las subclases a tener un metodo
-     * que sobreescribe el metodo toString de la superclase Obeject
+     * que sobreescribe el metodo toString de la superclase Obeject y 
+     * devuelve el String de la pieza
      * @return string de Pieza
      */
     @Override

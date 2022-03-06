@@ -8,6 +8,7 @@ package ajedrez;
 /**
  *
  * @author sancalsa
+ * @version 6.3.2022
  */
 public class Tablero {
 //atributos

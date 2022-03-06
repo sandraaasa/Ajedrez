@@ -7,7 +7,9 @@ package ajedrez;
 
 /**
  *
+ * Subclase Torre de la clase Pieza
  * @author sancalsa
+ * @version 6.3.2022
  */
 public class Torre extends Pieza{
 

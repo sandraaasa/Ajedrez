@@ -7,7 +7,9 @@ package ajedrez;
 
 /**
  *
+ * clase Posicion
  * @author sancalsa
+ * @version 6.3.2022
  */
 public class Posicion {
 /**

@@ -7,7 +7,9 @@ package ajedrez;
 
 /**
  *
+ * Clase Juego que crea jugadas con su turno
  * @author sancalsa
+ * @version 6.3.2022
  */
 public class Juego {
     private char turno;

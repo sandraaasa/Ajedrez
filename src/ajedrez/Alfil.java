@@ -7,7 +7,9 @@ package ajedrez;
 
 /**
  *
+ * Subclase Alfil de la clase Pieza
  * @author sancalsa
+ * @version 6.3.2022
  */
 public class Alfil extends Pieza {
 
