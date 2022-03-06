@@ -30,7 +30,7 @@ public class Rey extends Pieza {
     @Override
     public String toString() {
         String pieza;
-        if(color=='b'){
+        if(super.getColor()=='b'){
             pieza="\u2654 ";
         }else{
             pieza="\u265A ";

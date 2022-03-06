@@ -25,7 +25,7 @@ public class Caballo extends Pieza {
     @Override
     public String toString() {
         String pieza;
-        if(color=='b'){
+        if(super.getColor()=='b'){
             pieza="\u2658 ";
         }else{
             pieza="\u265E ";

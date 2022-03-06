@@ -24,7 +24,7 @@ public class Peon extends Pieza {
     @Override
     public String toString() {
         String pieza;
-        if(color=='b'){
+        if(super.getColor()=='b'){
             pieza="\u2659 ";
         }else{
             pieza="\u265F ";

@@ -24,7 +24,7 @@ public class Dama extends Pieza {
     @Override
     public String toString() {
         String pieza;
-        if(color=='b'){
+        if(super.getColor()=='b'){
             pieza="\u2655 ";
         }else{
             pieza="\u265B ";

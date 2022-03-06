@@ -25,7 +25,7 @@ public class Alfil extends Pieza {
     @Override
     public String toString() {
         String pieza;
-        if(color=='b'){
+        if(super.getColor()=='b'){
             pieza="\u2657 ";
         }else{
             pieza="\u265D ";

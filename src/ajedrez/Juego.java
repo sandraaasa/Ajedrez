@@ -41,7 +41,7 @@ public class Juego {
         if (tablero.tablero[fFinal][cFinal]==null) {
             on=true;
         }else{
-            if (tablero.tablero[fFinal][cFinal].color==tablero.tablero[fInicial][cInicial].color){
+            if (tablero.tablero[fFinal][cFinal].getColor()==tablero.tablero[fInicial][cInicial].getColor()){
                 on=false;
             }else{
                 on=true;

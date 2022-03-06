@@ -32,7 +32,7 @@ public class Torre extends Pieza{
     @Override
     public String toString() {
         String pieza;
-        if(color=='b'){
+        if(super.getColor()=='b'){
             pieza="\u2656 ";
         }else{
             pieza="\u265C ";
