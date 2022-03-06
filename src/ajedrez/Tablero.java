@@ -10,8 +10,14 @@ package ajedrez;
  * @author sancalsa
  */
 public class Tablero {
-    
+//atributos
     protected Pieza tablero[][] = new Pieza [8][8];
+    
+//constructores
+    /**
+     * Constructor que permite la creacion de un objeto de tipo Tablero
+     * inicializado como un tablero de ajedrez al principio de una partida
+     */
     public Tablero(){
         tablero[0][0]=new Torre('b');
         tablero[0][1]=new Caballo('b');
@@ -42,6 +48,11 @@ public class Tablero {
         
     }
 
+//Metodos
+    /**
+     * Metodo que imprime el tablero recorriendo el array 
+     * y pintando todas las piezas en un tablero
+     */
     public void pintarTablero(){
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[i].length; j++) {
@@ -54,7 +65,13 @@ public class Tablero {
         }
     }
 
-//Metodos
+    /**
+     * Metodo que permite saber mediate un boolean 
+     * si hay una pieza en una posicion determinada
+     * @param fila numero entero con el valor de la fila
+     * @param columna numero entero con el valor de la columna
+     * @return boolean de la fila y columna de la pieza
+     */
     public boolean hayPieza(int fila,int columna){
         boolean on=false;
         if (tablero[fila][columna]!=null){
@@ -62,28 +79,67 @@ public class Tablero {
         }       
         return on;
     }
+    /**
+     * Metodo que permite saber mediate un boolean 
+     * si hay una pieza en una posicion determinada
+     * @param pos Posicion 
+     * @return boolean de la posicion de la pieza
+     */
     public boolean hayPieza(Posicion pos){
         return hayPieza(pos.fila,pos.columna);
     }
-    /*public boolean hayPiezaEntre (Movimiento mov){}*/ //es muy largo
+    /**
+     * Metodo que permite saber mediate un boolean 
+     * si hay una pieza entre una posicion inicial determinada y otra
+     * @param mov Movimiento de la pieza
+     * @return boolean del movimiento de la pieza
+     */
+    public boolean hayPiezaEntre (Movimiento mov){
+        boolean on=false;
+        return on;
+    }
     
+    /**
+     * Metodo que permite modificar la pieza de una posicion determinada
+     * @param figura Pieza del tablero con la que averiguaremos la posicion inicial
+     * @param fila numero entero de la posicion en la que queremos poner la pieza
+     * @param columna numero entero de la posicion en la que queremos poner la pieza
+     */
     public void ponPieza(Pieza figura, int fila, int columna){
         if (tablero[fila][columna]==null||tablero[fila][columna].getColor()!=figura.getColor()){
             tablero[fila][columna]= figura;//comer pieza 
         }else System.out.println("NO AL CANIVALISMO. No puedes comerte tus propias piezas");
     }
+    /**
+     * Metodo que permite modificar la pieza de una posicion determinada
+     * @param figura Pieza del tablero con la que averiguaremos la posicion inicial
+     * @param pos Posicion en la que queremos poner la pieza
+     */
     public void ponPieza(Pieza figura, Posicion pos){ponPieza(figura,pos.fila,pos.columna);}
-    
+    /**
+     * Metodo que permite eliminar la pieza de una posicion determinada(poniendo esta posicion a null)
+     * @param fila numero entero de la posicion de la pieza
+     * @param columna numero de la posicion de la pieza
+     */
     public void quitaPieza(int fila,int columna){tablero[fila][columna]=null;}
+    /**
+     * Metodo que permite eliminar la pieza de una posicion determinada(poniendo esta posicion a null)
+     * @param pos posicion de la pieza
+     */
     public void quitaPieza(Posicion pos){tablero[pos.fila][pos.columna]=null;}
     
+    /**
+     * Metodo que devuelve la primera letra de la pieza y su atributo color
+     * @param fila numero entero de la posicion de la pieza
+     * @param columna numero entero de la posicion de la pieza
+     * @return String de la pieza en esa posicion
+     */
     public String DevuelvePieza(int fila,int columna){return tablero[fila][columna].pintarPieza();}
+    /**
+     * Metodo que devuelve la figura de una pieza
+     * @param pos Posicion de la pieza
+     * @return Pieza de la posicion
+     */
     public Pieza DevuelvePieza(Posicion pos){return tablero[pos.fila][pos.columna];}
-    
-    
-    @Override
-    public String toString() {
-    return "tablero";
-    }
     
 }

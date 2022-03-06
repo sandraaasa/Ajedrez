@@ -30,8 +30,8 @@ public class Movimiento {
     }
     /**
      * Constructor que permite la creacion de un objeto de tipo Movimiento con posicion inicial y final personalizada
-     * @param posInical
-     * @param posFinal 
+     * @param posInicial Posicion del Movimiento
+     * @param posFinal Posicion del Movimiento
      */
     public Movimiento(Posicion posInicial, Posicion posFinal) {
         if ((posInicial.columna>=0 && posInicial.columna<=7)&&
@@ -70,7 +70,7 @@ public class Movimiento {
     }
     /**
      * Metodo que permite conocer si el movimiento es horizontal
-     * @return boolean del movimiento vertical
+     * @return boolean del movimiento diagonal
      */
     public boolean esDiagonal (){
         boolean on = false;
@@ -93,4 +93,15 @@ public class Movimiento {
     public int saltoHorizontal(){
         return posInicial.getColumna()-posFinal.getColumna();
     }
+
+    /**
+     * Metodo que devuelve el string del movimiento
+     * @return string del Movimmiento
+     */
+    @Override
+    public String toString() {
+        return "Movimiento{" + "posInicial=" + posInicial + ", posFinal=" + posFinal + '}';
+    }
+    
+    
 }

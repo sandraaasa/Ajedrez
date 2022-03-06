@@ -14,8 +14,9 @@ public class Juego {
 
 //Constructor
     /**
-     * 
-     * @param turno 
+     * Constructor que permite la creacion de un objeto de tipo Juego con
+     * el atributo turno personalizao
+     * @param turno char con el turno
      */
     public Juego(char turno) {
        this.turno =turno;
@@ -23,13 +24,13 @@ public class Juego {
 
 //getter y setter
     /**
-     * 
-     * @return 
+     * Metodo que permite obtener el turno
+     * @return char del turno
      */
     public char getTurno(){return turno;}
     /**
-     * 
-     * @param turno 
+     * Metodo que permite modificar el turno
+     * @param turno char con el nuevo turno
      */
     public void setTurno(char turno) {this.turno = turno;}
 
@@ -38,7 +39,7 @@ public class Juego {
      * Metodo que convierte el string de la jugada a un movimiento
      * que el programa pueda leer
      * @param jugada introducida como string por el jugador
-     * @param tablero en el que se esta jugando
+     * @param tablero Tablero en el que se esta jugando
      * @return movimiento de la jugada
      */
     public Movimiento jugada (String jugada, Tablero tablero){
@@ -59,12 +60,12 @@ public class Juego {
     };
     /**
      * Metodo que nos permite saber si la jugada es valida o no
-     * @param fInicial
-     * @param fFinal
-     * @param cInicial
-     * @param cFinal
-     * @param tablero
-     * @return boolean de la jugada introducida por numero enteros
+     * @param fInicial numero entero de la posicion inicial
+     * @param fFinal numero entero de la posicion inicial
+     * @param cInicial numero entero de la posicion final
+     * @param cFinal numero entero de la posicion final
+     * @param tablero Tablero en el que se esta jugando
+     * @return boolean de la jugada introducida para validar
      */
      public boolean validarJugada (int fInicial,int fFinal,int cInicial,int cFinal, Tablero tablero){
         boolean on= false;

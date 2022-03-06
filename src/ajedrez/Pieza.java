@@ -15,7 +15,8 @@ public abstract class Pieza {
 
 //CONSTRUCTORES
     /**
-     * Constructor que inicializa el color de la pieza
+     * Constructor que permite la creacion de un objeto de clase Pieza 
+     * e inicializa el color de la pieza
      * @param color de la pieza que se le va a asignar
      */
     public Pieza(char color) {
@@ -60,8 +61,8 @@ public abstract class Pieza {
      * @return String de la pieza
      */
     public String pintarPieza() {
-        return toString();
-        /*return this.getClass().getSimpleName().charAt(0) + Character.toString(color);*/
+        /*return toString();*/
+        return this.getClass().getSimpleName().charAt(0) + Character.toString(color);
     }
     
 }

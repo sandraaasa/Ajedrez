@@ -47,7 +47,10 @@ public class Ajedrez {
                         //mover
                         nuevo.ponPieza(nuevo.tablero[mov.posInicial.fila][mov.posInicial.columna], mov.posFinal);//poner la pieza pos inicial en la final
                         nuevo.quitaPieza(mov.posInicial);//quitar la pieza de la pos inicial
-                        //cambiar de turno
+                        if (juego.getTurno()=='b') {
+                            juego.setTurno('n');
+                            on=false;
+                        }else 
                         on=false;
                     }else{
                         System.out.println("Esa pieza no se mueve así");

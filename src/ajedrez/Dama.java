@@ -13,7 +13,7 @@ public class Dama extends Pieza {
 
     /**
      * Constructor que permite la creacion de un objeto de clase Dama
-     * @param color de la pieza
+     * @param color char del color de la pieza
      */
     public Dama(char color) {
         super(color);
@@ -22,7 +22,7 @@ public class Dama extends Pieza {
     /**
      * Metodo que devuelve un boolean a partir de un movimiento
      * para saber si este es valido o no
-     * @param mov de pieza que es un movimiento
+     * @param mov Movimiento de la pieza
      * @return boolean del movimiento
      */
     @Override

@@ -21,8 +21,8 @@ public class Posicion {
     /**
      * Constructor que permite la creacion de un objeto de tipo Posicion
      * con los atributos fila y columna personalizados 
-     * @param fila
-     * @param columna 
+     * @param fila numero entero de la Posicion
+     * @param columna numero entero de la Posicion
      */
     public Posicion(int fila, int columna) {
         this.fila = fila;

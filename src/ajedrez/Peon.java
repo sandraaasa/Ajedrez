@@ -13,7 +13,7 @@ public class Peon extends Pieza {
 
     /**
      * Constructor que permite la creacion de un objeto de clase Peon 
-     * @param color de la pieza
+     * @param color char del color de la pieza
      */
     public Peon(char color) {
         super(color);
@@ -22,12 +22,13 @@ public class Peon extends Pieza {
     /**
      * Metodo que devuelve un boolean a partir de un movimiento
      * para saber si este es valido o no
-     * @param mov de pieza que es un movimiento
+     * @param mov Movimiento de la pieza
      * @return boolean del movimiento
      */
     @Override
     public boolean validoMovimiento(Movimiento mov) {
-        return mov.esVertical() || mov.esVertical();
+        
+        return mov.esVertical() || mov.esDiagonal();
     }
     
     /**
