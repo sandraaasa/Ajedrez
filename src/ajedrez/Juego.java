@@ -12,12 +12,35 @@ package ajedrez;
 public class Juego {
     private char turno;
 
+//Constructor
+    /**
+     * 
+     * @param turno 
+     */
     public Juego(char turno) {
        this.turno =turno;
     }
-    
+
+//getter y setter
+    /**
+     * 
+     * @return 
+     */
     public int getTurno(){return turno;}
+    /**
+     * 
+     * @param turno 
+     */
     public void setTurno(char turno) {this.turno = turno;}
+
+//Metodos
+    /**
+     * Metodo que convierte el string de la jugada a un movimiento
+     * que el programa pueda leer
+     * @param jugada introducida como string por el jugador
+     * @param tablero en el que se esta jugando
+     * @return movimiento de la jugada
+     */
     public Movimiento jugada (String jugada, Tablero tablero){
         Movimiento mov= null;
         jugada = jugada.toUpperCase(); //a2A3->A2A3
@@ -34,6 +57,15 @@ public class Juego {
         
         return mov;
     };
+    /**
+     * Metodo que nos permite saber si la jugada es valida o no
+     * @param fInicial
+     * @param fFinal
+     * @param cInicial
+     * @param cFinal
+     * @param tablero
+     * @return boolean de la jugada introducida por numero enteros
+     */
      public boolean validarJugada (int fInicial,int fFinal,int cInicial,int cFinal, Tablero tablero){
          //Ej: A2A3
         
