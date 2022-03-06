@@ -12,6 +12,9 @@ package ajedrez;
  */
 public class Tablero {
 //atributos
+    /**
+     * Atributo protegido tablero del Tablero compuesto por un array de piezas bidimensional
+     */
     protected Pieza tablero[][] = new Pieza [8][8];
     
 //constructores

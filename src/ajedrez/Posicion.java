@@ -12,9 +12,9 @@ package ajedrez;
  * @version 6.3.2022
  */
 public class Posicion {
-/**
- * ATRIBUTOS
- */
+
+//ATRIBUTOS
+
     int fila, columna;
     
 

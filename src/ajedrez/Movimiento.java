@@ -14,9 +14,14 @@ package ajedrez;
 public class Movimiento {
 
 //ATRIBUTOS
- 
-   protected Posicion posInicial;
-   protected Posicion posFinal;
+    /**
+     * Atributo protegido posicion inicial de movimiento compuesto por una fila y una columna
+     */
+    protected Posicion posInicial;
+    /**
+     * * Atributo posicion final de movimiento compuesto por una fila y una columna
+     */
+    protected Posicion posFinal;
  
 //CONSTRUCTORES
   
@@ -40,7 +45,6 @@ public class Movimiento {
             (posInicial.fila>=0 && posInicial.fila<=7) &&
             (posFinal.columna>=0 && posFinal.columna<=7) &&
             (posFinal.fila>=0&&posFinal.fila<=7)){
-            
                 this.posInicial = posInicial;
                 this.posFinal = posFinal;
         }
