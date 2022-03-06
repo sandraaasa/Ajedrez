@@ -12,8 +12,8 @@ package ajedrez;
 public class Torre extends Pieza{
 
     /**
-     * Constructor que permite la creacion de un objeto de tipo Torre 
-     * @param color 
+     * Constructor que permite la creacion de un objeto de clase Torre
+     * @param color de la pieza
      */
     public Torre(char color) {
         super(color);
@@ -22,7 +22,7 @@ public class Torre extends Pieza{
     /**
      * Metodo que devuelve un boolean a partir de un movimiento
      * para saber si este es valido o no
-     * @param mov
+     * @param mov de pieza que es un movimiento
      * @return boolean del movimiento
      */
     @Override
