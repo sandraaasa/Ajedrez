@@ -7,7 +7,7 @@ package ajedrez;
 
 /**
  *
- * * Subclase Caballo de la clase Pieza
+ * Subclase Caballo de la clase Pieza
  * @author sancalsa
  * @version 6.3.2022
  */
@@ -28,13 +28,14 @@ public class Caballo extends Pieza {
      * @return boolean del movimiento
      */
     @Override
-    public boolean validoMovimiento(Movimiento mov) {
+    public boolean validoMovimiento(Movimiento mov, Tablero tablero) {
         //modificar, hacer control
         boolean on = false;
-        if (mov.saltoVertical()==2&&mov.saltoHorizontal()==1) {
+        if ((mov.esVertical() && Math.abs(mov.saltoVertical())==2)
+                &&(mov.esHorizontal() && Math.abs(mov.saltoHorizontal())==1)) {
             on=true;
         }
-        return mov.esDiagonal();
+        return on;
     }
     
     /**

@@ -62,9 +62,9 @@ public class Tablero {
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[i].length; j++) {
                 if (tablero[i][j]!=null)
-                   System.out.print(tablero[i][j]+"  ");
+                   System.out.print(tablero[i][j]);
                 else
-                   System.out.print("__"+"  ");
+                   System.out.print("   ");
             }
             System.out.println("");
         }

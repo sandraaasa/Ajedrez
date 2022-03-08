@@ -21,22 +21,22 @@ public class Ajedrez {
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
         //dos jugadores
-        /*System.out.println("Elige un color \n"
+        System.out.println("Color del jugador 1\n"
                 + "     1. Negra \n"
                 + "     2. Blanca");
         int color = sc.nextInt();
-        do{
-            Juego jugador= new Juego(color);
-        }while(color==1||color==0);*/
-        
-        
-        //un jugador de momento 
-        Juego juego = new Juego ('b');
-        System.out.println("Empiezan las blancas");
+        char juega;
+        if (color==1) {
+            juega='n';
+        }else
+            juega='b';
+        Juego juego = new Juego (juega);
+        System.out.println("Empieza el jugador 1: "+ juega);
         Tablero nuevo= new Tablero();
       
         boolean on=false;
         Movimiento mov =null;
+        sc.nextLine();
         do{
             nuevo.pintarTablero();
             System.out.println("Que pieza quieres mover?\n"
@@ -45,8 +45,10 @@ public class Ajedrez {
             if (!jugada.equalsIgnoreCase("fin")){
                 mov = juego.jugada(jugada, nuevo);
                 if (mov!=null){ //significa que hay movimiento en cuanto al tablero
-                    if (nuevo.tablero[mov.posInicial.fila][mov.posInicial.columna].validoMovimiento(mov)==true){//mov es valido pieza
+                    if (nuevo.tablero[mov.posInicial.fila][mov.posInicial.columna].validoMovimiento(mov,nuevo)==true){//mov es valido pieza
                         //mover
+                        //comprobar que no hay pieza entre del mismo color si no es un caballo
+                        //y si la hay y es del mismo color poner pieza y quitar pieza que esta en esa posicion /*o*/ dar un error diciendo que ahi o puede colocarla o que se debe comer esa pieza 
                         nuevo.ponPieza(nuevo.tablero[mov.posInicial.fila][mov.posInicial.columna], mov.posFinal);//poner la pieza pos inicial en la final
                         nuevo.quitaPieza(mov.posInicial);//quitar la pieza de la pos inicial
                         if (juego.getTurno()=='b') {

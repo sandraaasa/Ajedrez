@@ -45,9 +45,10 @@ public abstract class Pieza {
      * a crear un metodo que devuelva un boolean a partir de un movimiento
      * para saber si este es valido o no
      * @param mov movimiento
+     * @param tablero Tablero en el que se esta jugando
      * @return boolean del movimiento
      */
-    public abstract boolean validoMovimiento(Movimiento mov);
+    public abstract boolean validoMovimiento(Movimiento mov, Tablero tablero);
     
     /**
      * Metodo que obliga a todas las subclases a tener un metodo

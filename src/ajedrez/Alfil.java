@@ -28,7 +28,7 @@ public class Alfil extends Pieza {
      * @return boolean del movimiento
      */
     @Override
-    public boolean validoMovimiento(Movimiento mov) {
+    public boolean validoMovimiento(Movimiento mov, Tablero tablero) {
         return mov.esDiagonal();
     }
     

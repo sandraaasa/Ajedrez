@@ -25,11 +25,18 @@ public class Rey extends Pieza {
      * Metodo que devuelve un boolean a partir de un movimiento
      * para saber si este es valido o no
      * @param mov Movimiento de la pieza
+     * @param tablero Tablero
      * @return boolean del movimiento
      */
     @Override
-    public boolean validoMovimiento(Movimiento mov) {
-        return mov.esVertical() || mov.esHorizontal()||mov.esDiagonal();
+    public boolean validoMovimiento(Movimiento mov, Tablero tablero) {
+        boolean on = false;
+        if ((mov.esVertical() && Math.abs(mov.saltoVertical())==1)
+                || (mov.esDiagonal() && Math.abs(mov.saltoVertical())==1)
+                || (mov.esHorizontal() && Math.abs(mov.saltoHorizontal())==1)){
+            on=true;
+        }
+        return on;
     }
     
     /**

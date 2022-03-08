@@ -69,10 +69,10 @@ public class Juego {
      * @param tablero Tablero en el que se esta jugando
      * @return boolean de la jugada introducida para validar
      */
-     public boolean validarJugada (int fInicial,int fFinal,int cInicial,int cFinal, Tablero tablero){
+    public boolean validarJugada (int fInicial,int fFinal,int cInicial,int cFinal, Tablero tablero){
         boolean on= false;
         if (tablero.tablero[fFinal][cFinal]==null) {
-            on=true;
+        on=true;
         }else{
             if (tablero.tablero[fFinal][cFinal].getColor()==tablero.tablero[fInicial][cInicial].getColor()){
                 on=false;
@@ -82,6 +82,17 @@ public class Juego {
         }
          
         return on;
-     }
+    }
+    
+    //coronacion si el peon llega a fila 0(siendo blanca) o fila 8 (siendo negra)
+    //se puede convertir en alfil torre caballo o dama
+    /*public boolean validarCoronnacion(){
+        boolean on = false;
+        return on;
+    }
+    public Pieza coronacion (Pieza figura,Movimiento mov){
+        if (validarCoronacion==true){
+        }
+    }*/
  
 }
