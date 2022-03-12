@@ -20,7 +20,6 @@ public class Ajedrez {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
-        //dos jugadores
         System.out.println("Color del jugador 1\n"
                 + "     1. Negra \n"
                 + "     2. Blanca");
@@ -47,36 +46,40 @@ public class Ajedrez {
         do{
             nuevo.pintarTablero();
             System.out.println("Que pieza quieres mover?\n"
-                    + "*Ejemplo A1A3 = ficha A1 se mueve a casilla A3 (para terminar FIN)");
+                    + "*Ejemplo A1A3 => ficha A1 se mueve a casilla A3 (para terminar FIN)");
             String jugada= sc.nextLine();
             if (!jugada.equalsIgnoreCase("fin")){
-                if (juego.getTurno()!=juega) {
-                    System.out.println("No es tu turno. Es el turno de :\n"
-                            + "   "+jugador.toUpperCase());
-                }else{
                     mov = juego.jugada(jugada, nuevo);
-                    if (mov!=null){ //significa que hay movimiento en cuanto al tablero
-                        if (nuevo.tablero[mov.posInicial.fila][mov.posInicial.columna].validoMovimiento(mov,nuevo)==true){//mov es valido pieza
-                            nuevo.ponPieza(nuevo.tablero[mov.posInicial.fila][mov.posInicial.columna], mov.posFinal);//poner la pieza pos inicial en la final
-                            nuevo.quitaPieza(mov.posInicial);//quitar la pieza de la pos inicial
-                            if (juego.getTurno() =='b') {
-                                juego.setTurno('n');
-                                on=false;
-                            }else{
-                                if (juego.getTurno()=='n') {
-                                    juego.setTurno('b');
-                                    on=false;
+                        if (mov!=null){
+                            if (nuevo.tablero[mov.posInicial.fila][mov.posInicial.columna].validoMovimiento(mov,nuevo)==true){
+                                if (juego.getTurno()==nuevo.DevuelvePieza(mov.posInicial).getColor()) {
+                                    nuevo.ponPieza(nuevo.tablero[mov.posInicial.fila][mov.posInicial.columna], mov.posFinal);
+                                    nuevo.quitaPieza(mov.posInicial);
+                                    if (juego.mate(mov.posFinal, nuevo)==true) {
+                                        System.out.println("Gracias por jugar. Ha ganado"+juego.getTurno());
+                                        on=true;
+                                    }
+                                    if (juego.getTurno() =='b') {
+                                        juego.setTurno('n');
+                                        on=false;
+                                    }else{
+                                        if (juego.getTurno()=='n') {
+                                            juego.setTurno('b');
+                                            on=false;
+                                        }
+                                    }
+                                } else {
+                                    System.out.println("NO ES TU TURNO.");
                                 }
+                            }else{
+                                System.out.println("Esa pieza no se mueve así");
+                                on=false;
                             }
                         }else{
-                            System.out.println("Esa pieza no se mueve así");
+                            System.out.println("Ese movimiento no es valido");
                             on=false;
                         }
-                    }else{
-                        System.out.println("Ese movimiento no es valido");
-                        on=false;
-                    }
-                }
+                    
 
             }else{
                 System.out.println("Adios!! T~T\n"

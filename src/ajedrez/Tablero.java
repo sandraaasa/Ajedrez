@@ -24,32 +24,32 @@ public class Tablero {
      * inicializado como un tablero de ajedrez al principio de una partida
      */
     public Tablero(){
-        tablero[0][0]=new Torre('b');
-        tablero[0][1]=new Caballo('b');
-        tablero[0][2]=new Alfil('b');
-        tablero[0][3]=new Dama('b');
-        tablero[0][4]=new Rey('b');
-        tablero[0][5]=new Alfil('b');
-        tablero[0][6]=new Caballo('b');
-        tablero[0][7]=new Torre('b');
+        tablero[0][0]=new Torre('n');
+        tablero[0][1]=new Caballo('n');
+        tablero[0][2]=new Alfil('n');
+        tablero[0][3]=new Dama('n');
+        tablero[0][4]=new Rey('n');
+        tablero[0][5]=new Alfil('n');
+        tablero[0][6]=new Caballo('n');
+        tablero[0][7]=new Torre('n');
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[i].length; j++) {
                 if(i==1&&j>=0&&j<=7){
-                    tablero[i][j]=new Peon('b');
+                    tablero[i][j]=new Peon('n');
                 }
                 if(i==6&&j>=0&&j<=7){
-                    tablero[i][j]=new Peon('n');
+                    tablero[i][j]=new Peon('b');
                 }
             } 
         }
-        tablero[7][0]=new Torre('n');
-        tablero[7][1]=new Caballo('n');
-        tablero[7][2]=new Alfil('n');
-        tablero[7][3]=new Dama('n');
-        tablero[7][4]=new Rey('n');
-        tablero[7][5]=new Alfil('n');
-        tablero[7][6]=new Caballo('n');
-        tablero[7][7]=new Torre('n');
+        tablero[7][0]=new Torre('b');
+        tablero[7][1]=new Caballo('b');
+        tablero[7][2]=new Alfil('b');
+        tablero[7][3]=new Dama('b');
+        tablero[7][4]=new Rey('b');
+        tablero[7][5]=new Alfil('b');
+        tablero[7][6]=new Caballo('b');
+        tablero[7][7]=new Torre('b');
         
     }
 
@@ -197,22 +197,22 @@ public class Tablero {
             }
         }
         if(mov.esDiagonal()==true){
-            for (int i = (fInicial+1), j = (cInicial+1); i < fFinal && on==false; i++,j++) {
+            for (int i = (fInicial+1), j = (cInicial+1); i < fFinal && j < cFinal && on==false; i++,j++) {
                     if (tablero[i][j]!=null) {
                         on=true;
                 }
             }
-            for (int i = (fInicial+1), j = (cInicial-1); i < fFinal && on==false; i++,j--) {
+            for (int i = (fInicial+1), j = (cInicial-1); i < fFinal && j > cFinal && on==false; i++,j--) {
                     if (tablero[i][j]!=null) {
                         on=true;
                 }
             }
-            for (int i = (fInicial-1), j = (cInicial+1); i > fFinal && on==false; i--,j++) {
+            for (int i = (fInicial-1), j = (cInicial+1); i > fFinal && j < cFinal && on==false; i--,j++) {
                     if (tablero[i][j]!=null) {
                         on=true;
                 }
             }
-            for (int i = (fInicial-1), j = (cInicial-1); i > fFinal && on==false; i--,j--) {
+            for (int i = (fInicial-1), j = (cInicial-1); i > fFinal  && j > cFinal&& on==false; i--,j--) {
                     if (tablero[i][j]!=null) {
                         on=true;
                 }
@@ -256,7 +256,8 @@ public class Tablero {
      * @param columna numero entero de la posicion de la pieza
      * @return String de la pieza en esa posicion
      */
-    public String DevuelvePieza(int fila,int columna){return tablero[fila][columna].pintarPieza();}
+    public String DevuelvePieza(int fila,int columna){return tablero[fila][columna].toString();}
+    //public String DevuelvePieza(int fila,int columna){return tablero[fila][columna].pintarPieza();}
     /**
      * Metodo que devuelve la figura de una pieza
      * @param pos Posicion de la pieza

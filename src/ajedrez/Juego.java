@@ -71,51 +71,45 @@ public class Juego {
      */
     public boolean validarJugada (int fInicial,int fFinal,int cInicial,int cFinal, Tablero tablero){
         boolean on= false;
-        if (tablero.tablero[fInicial][cInicial].toString()!="\u2658"||tablero.tablero[fInicial][cInicial].toString()!="\u265E"){
+        if (!(tablero.DevuelvePieza(fInicial, cInicial).equalsIgnoreCase("\u2658")||tablero.DevuelvePieza(fInicial, cInicial).equalsIgnoreCase("\u265E"))){
             if(tablero.hayPiezaEntre(fInicial,fFinal,cInicial,cFinal)==true) {
                 on=false;
             }else{
-                on=true;
+                if (tablero.hayPieza(fFinal, cFinal)==true) {
+                    if (tablero.tablero[fFinal][cFinal].getColor()!=tablero.tablero[fInicial][cInicial].getColor()){
+                        on=true;
+                    }
+                }else{
+                    on=true;
+                }
             }
         }else{
-            on=true;
-        }
-        if (tablero.hayPieza(fFinal, cFinal)==true) {
-            if (tablero.tablero[fFinal][cFinal].getColor()!=tablero.tablero[fInicial][cInicial].getColor()){
+            if (tablero.hayPieza(fFinal, cFinal)==true) {
+                if (tablero.tablero[fFinal][cFinal].getColor()!=tablero.tablero[fInicial][cInicial].getColor()){
+                    on=true;
+                }
+            }else{
                 on=true;
             }
-        }else{
-            on=true;
         }
          
         return on;
     }
-    
-    //coronacion si el peon llega a fila 0(siendo blanca) o fila 8 (siendo negra)
-    //se puede convertir en alfil torre caballo o dama
-    /*public boolean validarCoronnacion(){
-        boolean on = false;
+
+    /**
+     * Metodo que nos permite saber si el jugador ha hecho mate y por lo tanto ha ganado
+     * @param posFinal posicion final 
+     * @param tablero Tablero en el que se esta jugando
+     * @return boolean 
+     */
+    public boolean mate (Posicion posFinal, Tablero tablero){
+        boolean on=false;
+        if(tablero.DevuelvePieza(posFinal.getFila(),posFinal.getColumna()).equalsIgnoreCase("\u2654")
+                ||tablero.DevuelvePieza(posFinal.getFila(),posFinal.getColumna()).equalsIgnoreCase("\u265A")){
+            on=true;
+        }
         return on;
     }
-    public Pieza coronacion (Pieza figura,Movimiento mov){
-        if (validarCoronacion==true){
-        }
-    }*/
- 
-    //metodo que recorra el array y cada vez que se mueva una pieza se llame a este metodo
-    /*Recorrer el array tablero buscando la pieza rey y cuando tablero[i][j]==rey('b') y otro para las negras mandar un boolean de true
-    cuando recibe true esta bien pero si recibe un false por parte de alguno de los dos entonces 
-    sacar mensaje en el que se vea escrito Jaque Mate o FIN del JUEGO
-    //se puede intentar sacar el color del rey que falta y mandar mensaje a quien ha ganado o a quien a perdido
-    public boolean mate (Tablero tablero    ){
-        for (int i = 0; i < tablero.tablero.length; i++) {
-                    for (int j = 0; j < tablero.tablero[i].length; j++) {
-                        if (tablero.tablero[i][j]==tablero.DevuelvePieza()) {
-                            
-                        }
-                    }
-                }
-    }
-    */
+    
     
 }

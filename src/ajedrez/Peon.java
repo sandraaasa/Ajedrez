@@ -33,7 +33,7 @@ public class Peon extends Pieza {
     @Override
     public boolean validoMovimiento(Movimiento mov, Tablero tablero) {
         boolean on = false;
-        if (tablero.DevuelvePieza(mov.posInicial).getColor() == 'b') {
+        /*if (tablero.DevuelvePieza(mov.posInicial).getColor() == 'b') {
             if (mov.posInicial.fila == 6 && mov.esVertical() && mov.saltoVertical() == -1 || mov.saltoVertical() == -2) {
                 on = true;
             } else {
@@ -45,19 +45,21 @@ public class Peon extends Pieza {
                     }
                 }
             }
-        } else {
-            if (mov.posInicial.fila == 1 && mov.esVertical() && mov.saltoVertical() == 1 || mov.saltoVertical() == 2) {
+        } else {*/
+            if ((mov.posInicial.fila == 1||mov.posInicial.fila == 6) 
+                    && mov.esVertical() 
+                    && Math.abs(mov.saltoVertical()) == 1 || Math.abs(mov.saltoVertical())== 2) {
                 on = true;
             } else {
-                if (mov.esVertical() && mov.saltoVertical() == 1 && tablero.hayPieza(mov.posFinal) == false) {
+                if (mov.esVertical() && Math.abs(mov.saltoVertical()) == 1 && tablero.hayPieza(mov.posFinal) == false) {
                     on = true;
                 } else {
-                    if (mov.esDiagonal() && mov.saltoVertical() == 1 && tablero.hayPieza(mov.posFinal) == true) {
+                    if (mov.esDiagonal() && Math.abs(mov.saltoVertical()) == 1 && tablero.hayPieza(mov.posFinal) == true) {
                         on = true;
                     }
                 }
             }
-        }
+        //}
         return on;
     }
 
