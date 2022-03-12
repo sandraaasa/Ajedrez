@@ -78,6 +78,7 @@ public class Juego {
                 on=false;
             }else{
                 on=true;
+                
             }
         }
          
@@ -95,4 +96,20 @@ public class Juego {
         }
     }*/
  
+    //metodo que recorra el array y cada vez que se mueva una pieza se llame a este metodo
+    /*Recorrer el array tablero buscando la pieza rey y cuando tablero[i][j]==rey('b') y otro para las negras mandar un boolean de true
+    cuando recibe true esta bien pero si recibe un false por parte de alguno de los dos entonces 
+    sacar mensaje en el que se vea escrito Jaque Mate o FIN del JUEGO
+    //se puede intentar sacar el color del rey que falta y mandar mensaje a quien ha ganado o a quien a perdido
+    public boolean mate (Tablero tablero    ){
+        for (int i = 0; i < tablero.tablero.length; i++) {
+                    for (int j = 0; j < tablero.tablero[i].length; j++) {
+                        if (tablero.tablero[i][j]==tablero.DevuelvePieza()) {
+                            
+                        }
+                    }
+                }
+    }
+    */
+    
 }

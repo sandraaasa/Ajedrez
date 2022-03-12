@@ -31,8 +31,8 @@ public class Caballo extends Pieza {
     public boolean validoMovimiento(Movimiento mov, Tablero tablero) {
         //modificar, hacer control
         boolean on = false;
-        if ((mov.esVertical() && Math.abs(mov.saltoVertical())==2)
-                &&(mov.esHorizontal() && Math.abs(mov.saltoHorizontal())==1)) {
+        if ((Math.abs(mov.saltoHorizontal())==1 && Math.abs(mov.saltoVertical())==2)
+                || (Math.abs(mov.saltoHorizontal())==2 && Math.abs(mov.saltoVertical())==1)) {
             on=true;
         }
         return on;
