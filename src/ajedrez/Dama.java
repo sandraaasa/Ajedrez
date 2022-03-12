@@ -40,9 +40,9 @@ public class Dama extends Pieza {
     public String toString() {
         String pieza;
         if(super.getColor()=='b'){
-            pieza="\u2655 ";
+            pieza="\u2655";
         }else{
-            pieza="\u265B ";
+            pieza="\u265B";
         }
         return pieza;
     }

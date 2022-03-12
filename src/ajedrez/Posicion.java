@@ -76,6 +76,20 @@ public class Posicion {
 //METODOS
 
     /**
+     * Metodo que permite comprobar que la fila y la columna estan dentro del limite del tablero
+     * @param fila de la posicion
+     * @param columna de la posicion
+     * @return boolean que indica si esta dentro del limite o no
+     */
+    public boolean limite (int fila, int columna){
+        boolean on =false;
+        if ((fila>=0 && fila<=7) 
+            && (columna>=0 && columna<=7)) {
+            on=true;
+        }
+        return on;
+    }
+    /**
      * Metodo que sobreescribe el metodo toString de la clase Objeto para 
      * que se muestren los atributos de la clase posicion separados por una coma
      * @return string de la posicion

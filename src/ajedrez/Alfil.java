@@ -41,9 +41,9 @@ public class Alfil extends Pieza {
     public String toString() {
         String pieza;
         if(super.getColor()=='b'){
-            pieza="\u2657 ";
+            pieza="\u2657";
         }else{
-            pieza="\u265D ";
+            pieza="\u265D";
         }
         return pieza;
     }

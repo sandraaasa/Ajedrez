@@ -40,9 +40,9 @@ public class Torre extends Pieza{
     public String toString() {
         String pieza;
         if(super.getColor()=='b'){
-            pieza="\u2656 ";
+            pieza="\u2656";
         }else{
-            pieza="\u265C ";
+            pieza="\u265C";
         }
         return pieza;
     }

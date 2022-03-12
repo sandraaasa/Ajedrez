@@ -41,17 +41,15 @@ public class Movimiento {
      * @param posFinal Posicion del Movimiento
      */
     public Movimiento(Posicion posInicial, Posicion posFinal) {
-        if ((posInicial.columna>=0 && posInicial.columna<=7)&&
-            (posInicial.fila>=0 && posInicial.fila<=7) &&
-            (posFinal.columna>=0 && posFinal.columna<=7) &&
-            (posFinal.fila>=0&&posFinal.fila<=7)){
+        if (posInicial.limite(posInicial.fila,posInicial.columna)&&
+            posFinal.limite(posFinal.fila,posFinal.columna)){
                 this.posInicial = posInicial;
                 this.posFinal = posFinal;
         }
     }
 
 //METODOS
-
+    
     /**
      * Metodo que permite conocer si el movimiento es vertical 
      * @return boolean del movimiento vertical

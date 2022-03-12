@@ -47,9 +47,9 @@ public class Rey extends Pieza {
     public String toString() {
         String pieza;
         if(super.getColor()=='b'){
-            pieza="\u2654 ";
+            pieza="\u2654";
         }else{
-            pieza="\u265A ";
+            pieza="\u265A";
         }
         return pieza;
     }

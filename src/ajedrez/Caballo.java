@@ -46,9 +46,9 @@ public class Caballo extends Pieza {
     public String toString() {
         String pieza;
         if(super.getColor()=='b'){
-            pieza="\u2658 ";
+            pieza="\u2658";
         }else{
-            pieza="\u265E ";
+            pieza="\u265E";
         }
         return pieza;
     }

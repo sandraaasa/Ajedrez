@@ -26,14 +26,21 @@ public class Ajedrez {
                 + "     2. Blanca");
         int color = sc.nextInt();
         char juega;
+        String jugador;
         if (color==1) {
             juega='n';
         }else
             juega='b';
         Juego juego = new Juego (juega);
-        System.out.println("Empieza el jugador 1: "+ juega);
+        if (color==2) {
+            jugador="blancas";
+        } else {
+            jugador="negras";
+        }
+        System.out.println("Empieza las "+ jugador+"\n");
         Tablero nuevo= new Tablero();
       
+        
         boolean on=false;
         Movimiento mov =null;
         sc.nextLine();
@@ -43,29 +50,37 @@ public class Ajedrez {
                     + "*Ejemplo A1A3 = ficha A1 se mueve a casilla A3 (para terminar FIN)");
             String jugada= sc.nextLine();
             if (!jugada.equalsIgnoreCase("fin")){
-                mov = juego.jugada(jugada, nuevo);
-                if (mov!=null){ //significa que hay movimiento en cuanto al tablero
-                    if (nuevo.tablero[mov.posInicial.fila][mov.posInicial.columna].validoMovimiento(mov,nuevo)==true){//mov es valido pieza
-                        //mover
-                        //comprobar que no hay pieza entre del mismo color si no es un caballo
-                        //y si la hay y es del mismo color poner pieza y quitar pieza que esta en esa posicion /*o*/ dar un error diciendo que ahi o puede colocarla o que se debe comer esa pieza 
-                        nuevo.ponPieza(nuevo.tablero[mov.posInicial.fila][mov.posInicial.columna], mov.posFinal);//poner la pieza pos inicial en la final
-                        nuevo.quitaPieza(mov.posInicial);//quitar la pieza de la pos inicial
-                        if (juego.getTurno()=='b') {
-                            juego.setTurno('n');
+                if (juego.getTurno()!=juega) {
+                    System.out.println("No es tu turno. Es el turno de :\n"
+                            + "   "+jugador.toUpperCase());
+                }else{
+                    mov = juego.jugada(jugada, nuevo);
+                    if (mov!=null){ //significa que hay movimiento en cuanto al tablero
+                        if (nuevo.tablero[mov.posInicial.fila][mov.posInicial.columna].validoMovimiento(mov,nuevo)==true){//mov es valido pieza
+                            nuevo.ponPieza(nuevo.tablero[mov.posInicial.fila][mov.posInicial.columna], mov.posFinal);//poner la pieza pos inicial en la final
+                            nuevo.quitaPieza(mov.posInicial);//quitar la pieza de la pos inicial
+                            if (juego.getTurno() =='b') {
+                                juego.setTurno('n');
+                                on=false;
+                            }else{
+                                if (juego.getTurno()=='n') {
+                                    juego.setTurno('b');
+                                    on=false;
+                                }
+                            }
+                        }else{
+                            System.out.println("Esa pieza no se mueve así");
                             on=false;
-                        }else 
-                        on=false;
+                        }
                     }else{
-                        System.out.println("Esa pieza no se mueve así");
+                        System.out.println("Ese movimiento no es valido");
                         on=false;
                     }
-                }else{
-                    System.out.println("Ese movimiento no existe");
-                    on=false;
                 }
 
             }else{
+                System.out.println("Adios!! T~T\n"
+                        + "gracias por jugar!");
                 on=true;
             }
         }while(on==false);

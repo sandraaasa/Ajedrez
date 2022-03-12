@@ -71,9 +71,9 @@ public class Peon extends Pieza {
     public String toString() {
         String pieza;
         if (super.getColor() == 'b') {
-            pieza = "\u2659 ";
+            pieza = "\u2659";
         } else {
-            pieza = "\u265F ";
+            pieza = "\u265F";
         }
         return pieza;
     }

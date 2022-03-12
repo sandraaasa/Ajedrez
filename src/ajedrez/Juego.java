@@ -71,15 +71,21 @@ public class Juego {
      */
     public boolean validarJugada (int fInicial,int fFinal,int cInicial,int cFinal, Tablero tablero){
         boolean on= false;
-        if (tablero.tablero[fFinal][cFinal]==null) {
-        on=true;
-        }else{
-            if (tablero.tablero[fFinal][cFinal].getColor()==tablero.tablero[fInicial][cInicial].getColor()){
+        if (tablero.tablero[fInicial][cInicial].toString()!="\u2658"||tablero.tablero[fInicial][cInicial].toString()!="\u265E"){
+            if(tablero.hayPiezaEntre(fInicial,fFinal,cInicial,cFinal)==true) {
                 on=false;
             }else{
                 on=true;
-                
             }
+        }else{
+            on=true;
+        }
+        if (tablero.hayPieza(fFinal, cFinal)==true) {
+            if (tablero.tablero[fFinal][cFinal].getColor()!=tablero.tablero[fInicial][cInicial].getColor()){
+                on=true;
+            }
+        }else{
+            on=true;
         }
          
         return on;

@@ -59,12 +59,19 @@ public class Tablero {
      * y pintando todas las piezas en un tablero
      */
     public void pintarTablero(){
+        char letras = 65;
+        System.out.print(" "+"_|");
+        for (int i = 1; i < 9; i++, letras++) {
+            System.out.print("("+letras+")"+" ");
+        }
+        System.out.println("");
         for (int i = 0; i < tablero.length; i++) {
+            System.out.print("("+(i+1)+")"+" ");
             for (int j = 0; j < tablero[i].length; j++) {
                 if (tablero[i][j]!=null)
-                   System.out.print(tablero[i][j]);
+                   System.out.print("["+tablero[i][j]+"]");
                 else
-                   System.out.print("   ");
+                   System.out.print("["+" "+"]"+" ");
             }
             System.out.println("");
         }
@@ -95,12 +102,122 @@ public class Tablero {
     }
     /**
      * Metodo que permite saber mediate un boolean 
-     * si hay una pieza entre una posicion inicial determinada y otra
+     * si hay una pieza entre una posicion inicial determinada y otra final
      * @param mov Movimiento de la pieza
      * @return boolean del movimiento de la pieza
      */
     public boolean hayPiezaEntre (Movimiento mov){
         boolean on=false;
+        //falta diagonal o hacer un control para no repetir codigo cuando sea diagonal
+        if(mov.esVertical()==true){
+            for (int i = mov.posInicial.fila-1; i > mov.posFinal.fila && on; i--) {
+                if (tablero[i][mov.posInicial.columna]!=null) {
+                    on=true;
+                }
+            }
+            for (int i = mov.posInicial.fila+1; i < mov.posFinal.fila && on; i++) {
+                if (tablero[i][mov.posInicial.columna]!=null) {
+                    on=true;
+                }
+            }
+        }
+        if(mov.esHorizontal()==true){
+            for (int i = mov.posInicial.columna-1; i > mov.posFinal.columna && on ; i--) {
+                if (tablero[mov.posInicial.fila][i]!=null) {
+                    on=true;
+                }
+            }
+            for (int i = mov.posInicial.columna+1; i < mov.posFinal.columna && on ; i++) {
+                if (tablero[mov.posInicial.fila][i]!=null) {
+                    on=true;
+                }
+            }
+        }
+        if(mov.esDiagonal()==true){
+            for (int i = (mov.posInicial.fila+1), j = (mov.posInicial.columna+1); i < mov.posFinal.fila && on==false; i++,j++) {
+                    if (tablero[i][j]!=null) {
+                        on=true;
+                }
+            }
+            for (int i = (mov.posInicial.fila+1), j = (mov.posInicial.columna-1); i < mov.posFinal.fila && on==false; i++,j--) {
+                    if (tablero[i][j]!=null) {
+                        on=true;
+                }
+            }
+            for (int i = (mov.posInicial.fila-1), j = (mov.posInicial.columna+1); i > mov.posFinal.fila && on==false; i--,j++) {
+                    if (tablero[i][j]!=null) {
+                        on=true;
+                }
+            }
+            for (int i = (mov.posInicial.fila-1), j = (mov.posInicial.columna-1); i > mov.posFinal.fila && on==false; i--,j--) {
+                    if (tablero[i][j]!=null) {
+                        on=true;
+                }
+            }
+        }
+        return on;
+    }
+    /**
+     * Metodo que permite saber mediate un boolean 
+     * si hay una pieza entre una posicion inicial y otra posicion final
+     * @param fInicial numero entero del movimiento de la pieza
+     * @param fFinal numero entero del movimiento de la pieza
+     * @param cInicial numero entero del movimiento de la pieza
+     * @param cFinal numero entero del movimiento de la pieza
+     * @return boolean del movimiento de la pieza
+     */
+    public boolean hayPiezaEntre (int fInicial,int fFinal,int cInicial,int cFinal){
+        boolean on=false;
+        Posicion posInicial = new Posicion(fInicial,cInicial);
+        Posicion posFinal = new Posicion(fFinal,cFinal);
+        Movimiento mov= new Movimiento(posInicial,posFinal);
+        //falta diagonal o hacer un control para no repetir codigo cuando sea diagonal
+        if(mov.esVertical()==true){
+            for (int i = fInicial-1; i > fFinal && on==false; i--) {
+                if (tablero[i][cInicial]!=null) {
+                    on=true;
+                }
+            }
+            for (int i = fInicial+1; i < fFinal && on==false; i++) {
+                if (tablero[i][cInicial]!=null) {
+                    on=true;
+                }
+            }
+        }
+        if(mov.esHorizontal()==true){
+            for (int i = cInicial-1; i > cFinal && on==false ; i--) {
+                if (tablero[fInicial][i]!=null) {
+                    on=true;
+                }
+            }
+            for (int i = cInicial+1; i < cFinal && on==false ; i++) {
+                if (tablero[fInicial][i]!=null) {
+                    on=true;
+                }
+            }
+        }
+        if(mov.esDiagonal()==true){
+            for (int i = (fInicial+1), j = (cInicial+1); i < fFinal && on==false; i++,j++) {
+                    if (tablero[i][j]!=null) {
+                        on=true;
+                }
+            }
+            for (int i = (fInicial+1), j = (cInicial-1); i < fFinal && on==false; i++,j--) {
+                    if (tablero[i][j]!=null) {
+                        on=true;
+                }
+            }
+            for (int i = (fInicial-1), j = (cInicial+1); i > fFinal && on==false; i--,j++) {
+                    if (tablero[i][j]!=null) {
+                        on=true;
+                }
+            }
+            for (int i = (fInicial-1), j = (cInicial-1); i > fFinal && on==false; i--,j--) {
+                    if (tablero[i][j]!=null) {
+                        on=true;
+                }
+            }
+        }
         return on;
     }
     
@@ -112,7 +229,7 @@ public class Tablero {
      */
     public void ponPieza(Pieza figura, int fila, int columna){
         if (tablero[fila][columna]==null||tablero[fila][columna].getColor()!=figura.getColor()){
-            tablero[fila][columna]= figura;//comer pieza 
+            tablero[fila][columna]= figura;
         }else System.out.println("NO AL CANIVALISMO. No puedes comerte tus propias piezas");
     }
     /**
