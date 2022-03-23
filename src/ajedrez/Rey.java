@@ -43,7 +43,7 @@ public class Rey extends Pieza {
      * Metodo que permite sacar por pantalla la pieza dependiendo del atributo color que tenga esta
      * @return string del rey
      */
-    @Override
+    /*@Override
     public String toString() {
         String pieza;
         if(super.getColor()=='b'){
@@ -52,5 +52,5 @@ public class Rey extends Pieza {
             pieza="\u265A";
         }
         return pieza;
-    }
+    }*/
 }

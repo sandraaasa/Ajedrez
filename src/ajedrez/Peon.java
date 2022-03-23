@@ -69,7 +69,7 @@ public class Peon extends Pieza {
      *
      * @return string del peon
      */
-    @Override
+    /*@Override
     public String toString() {
         String pieza;
         if (super.getColor() == 'b') {
@@ -78,5 +78,5 @@ public class Peon extends Pieza {
             pieza = "\u265F";
         }
         return pieza;
-    }
+    }*/
 }

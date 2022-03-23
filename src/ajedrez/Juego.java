@@ -71,7 +71,7 @@ public class Juego {
      */
     public boolean validarJugada (int fInicial,int fFinal,int cInicial,int cFinal, Tablero tablero){
         boolean on= false;
-        if (!(tablero.DevuelvePieza(fInicial, cInicial).equalsIgnoreCase("\u2658")||tablero.DevuelvePieza(fInicial, cInicial).equalsIgnoreCase("\u265E"))){
+        if (!(tablero.DevuelvePieza(fInicial, cInicial).equalsIgnoreCase("Tn")||tablero.DevuelvePieza(fInicial, cInicial).equalsIgnoreCase("Tb"))){
             if(tablero.hayPiezaEntre(fInicial,fFinal,cInicial,cFinal)==true) {
                 on=false;
             }else{
@@ -102,10 +102,10 @@ public class Juego {
      * @param tablero Tablero en el que se esta jugando
      * @return boolean 
      */
-    public boolean mate (Posicion posFinal, Tablero tablero){
+    public boolean mate (Movimiento mov, Tablero tablero){
         boolean on=false;
-        if(tablero.DevuelvePieza(posFinal.getFila(),posFinal.getColumna()).equalsIgnoreCase("\u2654")
-                ||tablero.DevuelvePieza(posFinal.getFila(),posFinal.getColumna()).equalsIgnoreCase("\u265A")){
+        if((tablero.DevuelvePieza(mov.posInicial.getFila(),mov.posInicial.getColumna()).equalsIgnoreCase("Rn")&&tablero.DevuelvePieza(mov.posFinal.getFila(),mov.posFinal.getColumna()).equalsIgnoreCase("Rb"))
+                ||(tablero.DevuelvePieza(mov.posFinal.getFila(),mov.posFinal.getColumna()).equalsIgnoreCase("Rn")&&tablero.DevuelvePieza(mov.posFinal.getFila(),mov.posFinal.getColumna()).equalsIgnoreCase("Rb"))){
             on=true;
         }
         return on;

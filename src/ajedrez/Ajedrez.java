@@ -55,7 +55,7 @@ public class Ajedrez {
                                 if (juego.getTurno()==nuevo.DevuelvePieza(mov.posInicial).getColor()) {
                                     nuevo.ponPieza(nuevo.tablero[mov.posInicial.fila][mov.posInicial.columna], mov.posFinal);
                                     nuevo.quitaPieza(mov.posInicial);
-                                    if (juego.mate(mov.posFinal, nuevo)==true) {
+                                    if (juego.mate(mov, nuevo)==true) {
                                         System.out.println("Gracias por jugar. Ha ganado"+juego.getTurno());
                                         on=true;
                                     }

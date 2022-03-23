@@ -57,7 +57,11 @@ public abstract class Pieza {
      * @return string de Pieza
      */
     @Override
-    public abstract String toString() ;
+    public String toString(){
+        String pieza;
+        pieza=this.getClass().getSimpleName().charAt(0) + Character.toString(color);
+        return pieza;
+    } ;
     
     /**
      * Metodo que devuelve un string que contiene la primera letra de la pieza 

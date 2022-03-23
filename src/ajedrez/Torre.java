@@ -36,7 +36,7 @@ public class Torre extends Pieza{
      * Metodo que permite sacar por pantalla la pieza dependiendo del atributo color que tenga esta
      * @return string de la torre
      */
-    @Override
+    /*@Override
     public String toString() {
         String pieza;
         if(super.getColor()=='b'){
@@ -45,6 +45,6 @@ public class Torre extends Pieza{
             pieza="\u265C";
         }
         return pieza;
-    }
+    }*/
     
 }
