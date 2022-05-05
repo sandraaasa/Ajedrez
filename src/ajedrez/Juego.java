@@ -98,14 +98,14 @@ public class Juego {
 
     /**
      * Metodo que nos permite saber si el jugador ha hecho mate y por lo tanto ha ganado
-     * @param posFinal posicion final 
+     * @param mov posicion inicial y final
      * @param tablero Tablero en el que se esta jugando
      * @return boolean 
      */
     public boolean mate (Movimiento mov, Tablero tablero){
         boolean on=false;
-        if((tablero.DevuelvePieza(mov.posInicial.getFila(),mov.posInicial.getColumna()).equalsIgnoreCase("Rn")&&tablero.DevuelvePieza(mov.posFinal.getFila(),mov.posFinal.getColumna()).equalsIgnoreCase("Rb"))
-                ||(tablero.DevuelvePieza(mov.posFinal.getFila(),mov.posFinal.getColumna()).equalsIgnoreCase("Rn")&&tablero.DevuelvePieza(mov.posFinal.getFila(),mov.posFinal.getColumna()).equalsIgnoreCase("Rb"))){
+        if(mov!=null&&(tablero.DevuelvePieza(mov.posInicial.getFila(),mov.posInicial.getColumna()).equalsIgnoreCase("Rn")&&tablero.DevuelvePieza(mov.posFinal.getFila(),mov.posFinal.getColumna()).equalsIgnoreCase("Rb"))
+                ||(tablero.DevuelvePieza(mov.posFinal.getFila(),mov.posFinal.getColumna()).equalsIgnoreCase("Rb")&&tablero.DevuelvePieza(mov.posFinal.getFila(),mov.posFinal.getColumna()).equalsIgnoreCase("Rn"))){
             on=true;
         }
         return on;
